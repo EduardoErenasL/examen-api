@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 @RestController
-@CrossOrigin(origins = "*")
 @RequestMapping("/empleado")
 public class EmpleadoController {
     private static final Logger logger = LogManager.getLogger(EmpleadoController.class);

@@ -1,6 +1,7 @@
 package com.coppel.examen.models;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -24,7 +25,7 @@ public class PolizasModel {
     private Integer cantidad;
 
     @Column(name = "fecha")
-    private Date fecha;
+    private LocalDate fecha;
 
     public Long getIdPolizas() {
         return idPolizas;
@@ -58,11 +59,11 @@ public class PolizasModel {
         this.cantidad = cantidad;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 }

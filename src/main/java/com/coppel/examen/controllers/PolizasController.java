@@ -12,13 +12,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 
 
 @RestController
-@CrossOrigin(origins = "*")
 @RequestMapping("/poliza")
 public class PolizasController {
     private static final Logger logger = LogManager.getLogger(PolizasController.class);
@@ -51,7 +51,9 @@ public class PolizasController {
         try {
             WebResponse response = new WebResponse();
 
-            poliza.setFecha(new Date());
+            poliza.setFecha(LocalDate.now());
+
+
             PolizasModel polizaGuardada = polizasService.guardarPoliza(poliza);
 
             response.setData(polizaGuardada);
